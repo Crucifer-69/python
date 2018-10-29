@@ -1,23 +1,27 @@
-import sys
 from random import randint
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 
 # global variables
-
 activePlayer = 1
 p1 = []
 p2 = []
 count = 0
 
+# deploying the window
 root = Tk()
 root.title('Tic Tac Toy')
+
 # label
 label = Label(root, text="player 1", relief=RAISED)
 label.grid(row=0, column=1, sticky='snew', pady=1)
+
+# set style of buttons
 style = ttk.Style()
 style.theme_use('clam')
+style.configure("TButton", font=(20))
+
 # buttons
 bu1 = ttk.Button(root, text=' ')
 bu1.grid(row=1, column=0, sticky='snew', ipadx=40, ipady=40, padx=1, pady=1)
@@ -80,7 +84,7 @@ def ButtonClick(id):
     CheckWinner()
 
 
-def SetLayout(id, symbol):
+def SetLayout(id, symbol):  # set layout of buttons
     global count
     if id == 1:
         if symbol == "X":
@@ -156,7 +160,7 @@ def SetLayout(id, symbol):
         count += 1
     style.map('red.TButton', background=[('pressed', '#ffffff'), ('disabled', '#f94545')],
               foreground=[('disabled', '#f7eb6a')])
-    style.map('blue.TButton', background=[('pressed', 'blue'), ('disabled', '#6780ef')],
+    style.map('blue.TButton', background=[('pressed', '#ffffff'), ('disabled', '#6780ef')],
               foreground=[('disabled', '#f7eb6a')])
 
 
@@ -250,6 +254,7 @@ def AutoPlay():
             emptyCell.append(cell + 1)
 
     # auto play for p2
+    # for rows
     if (1 in p2) and (2 in p2) and (3 in emptyCell):
         ButtonClick(3)
     elif (1 in p2) and (3 in p2) and (2 in emptyCell):
@@ -309,6 +314,7 @@ def AutoPlay():
         ButtonClick(5)
 
     # auto play check for p1
+    # for rows
     elif (1 in p1) and (2 in p1) and (3 in emptyCell):
         ButtonClick(3)
     elif (1 in p1) and (3 in p1) and (2 in emptyCell):

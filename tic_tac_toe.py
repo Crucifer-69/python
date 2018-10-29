@@ -179,46 +179,46 @@ def CheckWinner():
     # for p1
     if (1 in p1) and (2 in p1) and (3 in p1):
         winner = 1
-    if (4 in p1) and (5 in p1) and (6 in p1):
+    elif (4 in p1) and (5 in p1) and (6 in p1):
         winner = 1
-    if (7 in p1) and (8 in p1) and (9 in p1):
+    elif (7 in p1) and (8 in p1) and (9 in p1):
         winner = 1
     # for p2
-    if (1 in p2) and (2 in p2) and (3 in p2):
+    elif (1 in p2) and (2 in p2) and (3 in p2):
         winner = 2
-    if (4 in p2) and (5 in p2) and (6 in p2):
+    elif (4 in p2) and (5 in p2) and (6 in p2):
         winner = 2
-    if (7 in p2) and (8 in p2) and (9 in p2):
+    elif (7 in p2) and (8 in p2) and (9 in p2):
         winner = 2
 
     # for columns
     # for p1
-    if (1 in p1) and (4 in p1) and (7 in p1):
+    elif (1 in p1) and (4 in p1) and (7 in p1):
         winner = 1
-    if (2 in p1) and (5 in p1) and (8 in p1):
+    elif (2 in p1) and (5 in p1) and (8 in p1):
         winner = 1
-    if (3 in p1) and (6 in p1) and (9 in p1):
+    elif (3 in p1) and (6 in p1) and (9 in p1):
         winner = 1
 
     # for p2
-    if (1 in p2) and (4 in p2) and (7 in p2):
+    elif (1 in p2) and (4 in p2) and (7 in p2):
         winner = 2
-    if (2 in p2) and (5 in p2) and (8 in p2):
+    elif (2 in p2) and (5 in p2) and (8 in p2):
         winner = 2
-    if (3 in p2) and (6 in p2) and (9 in p2):
+    elif (3 in p2) and (6 in p2) and (9 in p2):
         winner = 2
 
     # for diagonals
     # for p2
-    if (1 in p1) and (5 in p1) and (9 in p1):
+    elif (1 in p1) and (5 in p1) and (9 in p1):
         winner = 1
-    if (3 in p1) and (5 in p1) and (7 in p1):
+    elif (3 in p1) and (5 in p1) and (7 in p1):
         winner = 1
 
     # for p2
-    if (1 in p2) and (5 in p2) and (9 in p2):
+    elif (1 in p2) and (5 in p2) and (9 in p2):
         winner = 2
-    if (3 in p2) and (5 in p2) and (7 in p2):
+    elif (3 in p2) and (5 in p2) and (7 in p2):
         winner = 2
 
     if winner == 1:
@@ -233,7 +233,6 @@ def CheckWinner():
         bu9.state(['disabled'])
         messagebox.showinfo(title='congratulations', message="palyer 1 is the winner")
         sys.exit()
-
 
     elif winner == 2:
         bu1.state(['disabled'])
@@ -263,21 +262,81 @@ def AutoPlay():
         if not ((cell + 1 in p1) or (cell + 1 in p2)):
             emptyCell.append(cell + 1)
 
-    if (1 in p1) and (2 in p1) and (3 in emptyCell):
+    #auto play for p2
+    if (1 in p2) and (2 in p2) and (3 in emptyCell):
+        ButtonClick(3)
+    elif (1 in p2) and (3 in p2) and (2 in emptyCell):
+        ButtonClick(2)
+    elif (2 in p2) and (3 in p2) and (1 in emptyCell):
+        ButtonClick(1)
+
+    elif (4 in p2) and (5 in p2) and (6 in emptyCell):
+        ButtonClick(6)
+    elif (5 in p1) and (6 in p2) and (4 in emptyCell):
+        ButtonClick(4)
+    elif (6 in p2) and (4 in p2) and (5 in emptyCell):
+        ButtonClick(5)
+
+    elif (7 in p2) and (8 in p2) and (9 in emptyCell):
+        ButtonClick(9)
+    elif (8 in p2) and (9 in p2) and (7 in emptyCell):
+        ButtonClick(7)
+    elif (9 in p2) and (7 in p2) and (8 in emptyCell):
+        ButtonClick(8)
+
+    # for columns
+    elif (1 in p2) and (4 in p2) and (7 in emptyCell):
+        ButtonClick(7)
+    elif (4 in p2) and (7 in p2) and (1 in emptyCell):
+        ButtonClick(1)
+    elif (7 in p2) and (1 in p2) and (4 in emptyCell):
+        ButtonClick(4)
+
+    elif (2 in p2) and (5 in p2) and (8 in emptyCell):
+        ButtonClick(8)
+    elif (5 in p2) and (8 in p2) and (2 in emptyCell):
+        ButtonClick(2)
+    elif (8 in p2) and (2 in p2) and (5 in emptyCell):
+        ButtonClick(5)
+
+    elif (3 in p2) and (6 in p2) and (9 in emptyCell):
+        ButtonClick(9)
+    elif (6 in p2) and (9 in p2) and (3 in emptyCell):
+        ButtonClick(3)
+    elif (9 in p2) and (3 in p2) and (6 in emptyCell):
+        ButtonClick(6)
+
+    # for diagonals
+    elif (1 in p2) and (5 in p2) and (9 in emptyCell):
+        ButtonClick(9)
+    elif (5 in p2) and (9 in p2) and (1 in emptyCell):
+        ButtonClick(1)
+    elif (9 in p2) and (1 in p2) and (5 in emptyCell):
+        ButtonClick(5)
+
+    elif (3 in p2) and (5 in p2) and (7 in emptyCell):
+        ButtonClick(7)
+    elif (5 in p2) and (7 in p2) and (3 in emptyCell):
+        ButtonClick(3)
+    elif (7 in p2) and (3 in p2) and (5 in emptyCell):
+        ButtonClick(5)
+
+    # auto play check for p1
+    elif (1 in p1) and (2 in p1) and (3 in emptyCell):
         ButtonClick(3)
     elif (1 in p1) and (3 in p1) and (2 in emptyCell):
         ButtonClick(2)
     elif (2 in p1) and (3 in p1) and (1 in emptyCell):
         ButtonClick(1)
 
-    if (4 in p1) and (5 in p1) and (6 in emptyCell):
+    elif (4 in p1) and (5 in p1) and (6 in emptyCell):
         ButtonClick(6)
     elif (5 in p1) and (6 in p1) and (4 in emptyCell):
         ButtonClick(4)
     elif (6 in p1) and (4 in p1) and (5 in emptyCell):
         ButtonClick(5)
 
-    if (7 in p1) and (8 in p1) and (9 in emptyCell):
+    elif (7 in p1) and (8 in p1) and (9 in emptyCell):
         ButtonClick(9)
     elif (8 in p1) and (9 in p1) and (7 in emptyCell):
         ButtonClick(7)
@@ -285,21 +344,21 @@ def AutoPlay():
         ButtonClick(8)
 
     # for columns
-    if (1 in p1) and (4 in p1) and (7 in emptyCell):
+    elif (1 in p1) and (4 in p1) and (7 in emptyCell):
         ButtonClick(7)
     elif (4 in p1) and (7 in p1) and (1 in emptyCell):
         ButtonClick(1)
     elif (7 in p1) and (1 in p1) and (4 in emptyCell):
         ButtonClick(4)
 
-    if (2 in p1) and (5 in p1) and (8 in emptyCell):
+    elif (2 in p1) and (5 in p1) and (8 in emptyCell):
         ButtonClick(8)
     elif (5 in p1) and (8 in p1) and (2 in emptyCell):
         ButtonClick(2)
     elif (8 in p1) and (2 in p1) and (5 in emptyCell):
         ButtonClick(5)
 
-    if (3 in p1) and (6 in p1) and (9 in emptyCell):
+    elif (3 in p1) and (6 in p1) and (9 in emptyCell):
         ButtonClick(9)
     elif (6 in p1) and (9 in p1) and (3 in emptyCell):
         ButtonClick(3)
@@ -307,7 +366,7 @@ def AutoPlay():
         ButtonClick(6)
 
     # for diagonals
-    if (1 in p1) and (5 in p1) and (9 in emptyCell):
+    elif (1 in p1) and (5 in p1) and (9 in emptyCell):
         ButtonClick(9)
     elif (5 in p1) and (9 in p1) and (1 in emptyCell):
         ButtonClick(1)
@@ -320,7 +379,7 @@ def AutoPlay():
         ButtonClick(3)
     elif (7 in p1) and (3 in p1) and (5 in emptyCell):
         ButtonClick(5)
-    if len(emptyCell) > 1:
+    elif len(emptyCell) > 1:
         rIndex = randint(0, len(emptyCell) - 1)
         ButtonClick(emptyCell[rIndex])
         del emptyCell[rIndex]

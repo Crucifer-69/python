@@ -15,8 +15,9 @@ root = Tk()
 root.title('Tic Tac Toy')
 # label
 label = Label(root, text="player 1", relief=RAISED)
-label.grid(row=0, column=1, sticky='snew', )
+label.grid(row=0, column=1, sticky='snew', pady=1)
 style = ttk.Style()
+style.theme_use('clam')
 # buttons
 bu1 = ttk.Button(root, text=' ')
 bu1.grid(row=1, column=0, sticky='snew', ipadx=40, ipady=40, padx=1, pady=1)
@@ -83,94 +84,80 @@ def SetLayout(id, symbol):
     global count
     if id == 1:
         if symbol == "X":
-            style.configure('red.TButton', background='red')
             bu1.configure(style="red.TButton")
         else:
-            style.configure('blue.TButton', background='blue')
             bu1.configure(style="blue.TButton")
         bu1.config(text=symbol)
         bu1.state(['disabled'])
         count += 1
     elif id == 2:
         if symbol == "X":
-            style.configure('red.TButton', background='red')
             bu2.configure(style="red.TButton")
         else:
-            style.configure('blue.TButton', background='blue')
             bu2.configure(style="blue.TButton")
         bu2.config(text=symbol)
         bu2.state(['disabled'])
         count += 1
     elif id == 3:
         if symbol == "X":
-            style.configure('red.TButton', background='red')
             bu3.configure(style="red.TButton")
         else:
-            style.configure('blue.TButton', background='blue')
             bu3.configure(style="blue.TButton")
         bu3.config(text=symbol)
         bu3.state(['disabled'])
         count += 1
     elif id == 4:
         if symbol == "X":
-            style.configure('red.TButton', background='red')
             bu4.configure(style="red.TButton")
         else:
-            style.configure('blue.TButton', background='blue')
             bu4.configure(style="blue.TButton")
         bu4.config(text=symbol)
         bu4.state(['disabled'])
         count += 1
     elif id == 5:
         if symbol == "X":
-            style.configure('red.TButton', background='red')
             bu5.configure(style="red.TButton")
         else:
-            style.configure('blue.TButton', background='blue')
             bu5.configure(style="blue.TButton")
         bu5.config(text=symbol)
         bu5.state(['disabled'])
         count += 1
     elif id == 6:
         if symbol == "X":
-            style.configure('red.TButton', background='red')
             bu6.configure(style="red.TButton")
         else:
-            style.configure('blue.TButton', background='blue')
             bu6.configure(style="blue.TButton")
         bu6.config(text=symbol)
         bu6.state(['disabled'])
         count += 1
     elif id == 7:
         if symbol == "X":
-            style.configure('red.TButton', background='red')
             bu7.configure(style="red.TButton")
         else:
-            style.configure('blue.TButton', background='blue')
             bu7.configure(style="blue.TButton")
         bu7.config(text=symbol)
         bu7.state(['disabled'])
         count += 1
     elif id == 8:
         if symbol == "X":
-            style.configure('red.TButton', background='red')
             bu8.configure(style="red.TButton")
         else:
-            style.configure('blue.TButton', background='blue')
             bu8.configure(style="blue.TButton")
         bu8.config(text=symbol)
         bu8.state(['disabled'])
         count += 1
     elif id == 9:
         if symbol == "X":
-            style.configure('red.TButton', background='red')
             bu9.configure(style="red.TButton")
         else:
-            style.configure('blue.TButton', background='blue')
             bu9.configure(style="blue.TButton")
         bu9.config(text=symbol)
         bu9.state(['disabled'])
         count += 1
+    style.map('red.TButton', background=[('pressed', '#ffffff'), ('disabled', '#f94545')],
+              foreground=[('disabled', '#f7eb6a')])
+    style.map('blue.TButton', background=[('pressed', 'blue'), ('disabled', '#6780ef')],
+              foreground=[('disabled', '#f7eb6a')])
 
 
 def CheckWinner():
@@ -262,7 +249,7 @@ def AutoPlay():
         if not ((cell + 1 in p1) or (cell + 1 in p2)):
             emptyCell.append(cell + 1)
 
-    #auto play for p2
+    # auto play for p2
     if (1 in p2) and (2 in p2) and (3 in emptyCell):
         ButtonClick(3)
     elif (1 in p2) and (3 in p2) and (2 in emptyCell):

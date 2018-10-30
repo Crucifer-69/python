@@ -11,16 +11,16 @@ count = 0
 
 # deploying the window
 root = Tk()
-root.title('Tic Tac Toy')
+root.title('Tic Tac Toe')
 
 # label
-label = Label(root, text="player 1", relief=RAISED)
-label.grid(row=0, column=1, sticky='snew', pady=1)
+label = Label(root, text="Your Turn", relief=RAISED)
+label.grid(row=0, column=1, sticky='snew', pady=1, ipady=3)
 
 # set style of buttons
 style = ttk.Style()
 style.theme_use('clam')
-style.configure("TButton", font=(20))
+style.configure("TButton", font=20)
 
 # buttons
 bu1 = ttk.Button(root, text=' ')
@@ -222,7 +222,8 @@ def CheckWinner():
         bu7.state(['disabled'])
         bu8.state(['disabled'])
         bu9.state(['disabled'])
-        messagebox.showinfo(title='congratulations', message="palyer 1 is the winner")
+        messagebox.showinfo(title='Result', message="                  You won                  ")
+
         sys.exit()
 
     elif winner == 2:
@@ -235,13 +236,13 @@ def CheckWinner():
         bu7.state(['disabled'])
         bu8.state(['disabled'])
         bu9.state(['disabled'])
-        messagebox.showinfo(title='congratulations', message="palyer 2 is the winner")
+        messagebox.showinfo(title='Result', message="                  You Lost                  ")
         sys.exit()
 
     elif count == 9:
         label = Label(root, text="No Winner", relief=RAISED)
         label.grid(row=0, column=1, sticky='snew')
-        messagebox.showinfo(title='Draw', message="The match was a draw")
+        messagebox.showinfo(title='Draw', message="         The match was a draw         ")
         sys.exit()
 
 

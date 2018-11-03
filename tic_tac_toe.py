@@ -37,7 +37,7 @@ but1 = ttk.Button(root1, text="Single Player")
 but1.pack(pady=10, ipadx=4, ipady=3)
 but1.config(command=lambda: singleplayer())
 
-but2 = ttk.Button(root1, text="Multiplayer")
+but2 = ttk.Button(root1, text="Two player")
 but2.pack(pady=0, ipadx=4, ipady=3)
 but2.config(command=lambda: multiplayer())
 

@@ -4,11 +4,14 @@ from tkinter import *
 
 class Game:
 
-    def singleplayer(self):
+    def singleplayer(self,r1):
+        r1.destroy()
         print("1 ")
         return 1
 
-    def multiplayer(self):
+
+    def multiplayer(self,r1):
+        r1.destroy()
         print("2")
         return 2
 
@@ -19,11 +22,11 @@ class Game:
     def but(self, r):
         but1 = ttk.Button(r, text="Single Player")
         but1.pack(pady=10, ipadx=4, ipady=3)
-        but1.config(command=lambda: self.singleplayer())
+        but1.config(command=lambda: self.singleplayer(r))
 
         but2 = ttk.Button(r, text="Multiplayer")
         but2.pack(pady=0, ipadx=4, ipady=3)
-        but2.config(command=lambda: self.multiplayer())
+        but2.config(command=lambda: self.multiplayer(r))
 
         but3 = ttk.Button(r, text="Exit")
         but3.pack(pady=10, ipadx=4, ipady=3)

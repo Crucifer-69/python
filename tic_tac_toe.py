@@ -3,6 +3,49 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 
+player = 0
+
+root1 = Tk()
+root1.title("Tic Tac Toe")
+root1.geometry("400x200+150+200")
+
+style = ttk.Style()
+style.theme_use('clam')
+style.configure("TButton", font=20)
+
+
+def singleplayer():
+    global player
+    print("1")
+    player = 1
+    root1.destroy()
+
+
+def multiplayer():
+    global player
+    print("2")
+    player = 2
+    root1.destroy()
+
+def exit():
+    sys.exit()
+
+
+but1 = ttk.Button(root1, text="Single Player")
+but1.pack(pady=10, ipadx=4, ipady=3)
+but1.config(command=lambda: singleplayer())
+
+but2 = ttk.Button(root1, text="Multiplayer")
+but2.pack(pady=0, ipadx=4, ipady=3)
+but2.config(command=lambda: multiplayer())
+
+but3 = ttk.Button(root1, text="Exit")
+but3.pack(pady=10, ipadx=4, ipady=3)
+but3.config(command=lambda: exit())
+
+root1.mainloop()
+######################################################################################
+
 # global variables
 activePlayer = 1
 p1 = []
@@ -64,7 +107,7 @@ def ButtonClick(id):
     global activePlayer
     global p1
     global p2
-
+    global player
     if activePlayer == 1:
         SetLayout(id, "X")
         p1.append(id)
@@ -72,7 +115,8 @@ def ButtonClick(id):
         label.grid(row=0, column=1, sticky='snew')
         activePlayer = 2
         # print("p1:{}".format(p1))
-        AutoPlay()
+        if player == 1:
+            AutoPlay()
 
     elif activePlayer == 2:
         SetLayout(id, "O")

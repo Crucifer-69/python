@@ -4,7 +4,7 @@ from tkinter import messagebox
 from tkinter import ttk
 
 player = 0
-
+# index page creation
 root1 = Tk()
 root1.title("Tic Tac Toe")
 root1.geometry("400x200+150+200")
@@ -27,10 +27,12 @@ def multiplayer():
     player = 2
     root1.destroy()
 
+
 def exit():
     sys.exit()
 
 
+# button on index page
 but1 = ttk.Button(root1, text="Single Player")
 but1.pack(pady=10, ipadx=4, ipady=3)
 but1.config(command=lambda: singleplayer())
@@ -43,9 +45,11 @@ but3 = ttk.Button(root1, text="Exit")
 but3.pack(pady=10, ipadx=4, ipady=3)
 but3.config(command=lambda: exit())
 
+# index page ends
 root1.mainloop()
 ######################################################################################
 
+# the actual game starts
 # global variables
 activePlayer = 1
 p1 = []

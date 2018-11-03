@@ -4,9 +4,8 @@ from tkinter import *
 
 class Game:
 
-
     def singleplayer(self):
-        print("1")
+        print("1 ")
         return 1
 
     def multiplayer(self):

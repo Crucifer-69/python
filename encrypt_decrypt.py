@@ -50,7 +50,7 @@ def brut(s):
         print(''.join(decrypted))
         del decrypted[:]
 
-num =2
-encrypted = encrypt("sanket.bondre", num)
-decrypt(encrypted,num)
+
+encrypted = encrypt("Hello world", 2)
+decrypt(encrypted,2)
 brut(encrypted)

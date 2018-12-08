@@ -35,20 +35,8 @@ def decrypt(s, num):
 
 
 def brut(s):
-    s.lower()
-    s_list = list(s)
-    decrypted = []
     for num in range(26):
-        for i in s_list:
-            if i in alpha:
-                ascii = ord(i)
-                ascii -= num
-                alphabet = chr(ascii)
-                decrypted.append(alphabet)
-            else:
-                decrypted.append(i)
-        print(''.join(decrypted))
-        del decrypted[:]
+        decrypt(s,num)
 
 
 encrypted = encrypt("Hello world", 2)

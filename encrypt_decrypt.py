@@ -1,11 +1,12 @@
 import string
 
-
 alpha = string.ascii_lowercase
+
 
 def encrypt(s, num):
     s.lower()
     s_list = list(s)
+
     encrypted = []
     for i in s_list:
         if i in alpha:
@@ -16,7 +17,7 @@ def encrypt(s, num):
         else:
             encrypted.append(i)
     print(''.join(encrypted))
-    return(''.join(encrypted))
+    return (''.join(encrypted))
 
 
 def decrypt(s, num):
@@ -36,9 +37,9 @@ def decrypt(s, num):
 
 def brut(s):
     for num in range(26):
-        decrypt(s,num)
+        decrypt(s, num)
 
 
 encrypted = encrypt("Hello world", 2)
-decrypt(encrypted,2)
+decrypt(encrypted, 2)
 brut(encrypted)

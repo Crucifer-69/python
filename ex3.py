@@ -17,4 +17,4 @@ print("That's why it's false.")
 
 print("It is greater? ", 5>-2)
 print("It is greater or equal?", 5>=2)
-print("It is less than or equal?", 5<=-2)
+print("It is less than or equal?", 5<=-2)   

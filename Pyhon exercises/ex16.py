@@ -1,3 +1,5 @@
+#you need a text document created before running this program
+
 from sys import argv
 
 script, filename = argv

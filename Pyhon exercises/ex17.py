@@ -1,3 +1,5 @@
+#you need two text documents created before running this program
+
 from sys import argv
 from os.path import exists 
 

@@ -16,4 +16,4 @@ print("we can even do math")
 cheese_and_crackers(10+20, 5+6)
 
 print("And we can combine the two, variable and math")
-cheese_and_crackers(amount_of_cheese+100, aomunt_of_crackers+1000)
+cheese_and_crackers(amount_of_cheese+100, aomunt_of_crackers+1000)  

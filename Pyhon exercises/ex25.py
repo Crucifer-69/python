@@ -4,7 +4,7 @@ def break_words(stuff):
 	return words
 
 def sort_words(words):
-	"""sorts the words"""
+	"""sorts the words"""  
 	return sorted(words)
 
 def print_first_word(words):
